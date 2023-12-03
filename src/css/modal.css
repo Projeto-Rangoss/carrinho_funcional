@@ -1,0 +1,345 @@
+/* MODAL CARRINHO */
+#modalCarrinho::backdrop {
+    background-color: rgb(0 0 0 / .3);
+}
+
+#modalCarrinho {
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    width: 800px;
+    max-width: 90%;
+    height: 60%;
+    margin: 0 auto;
+
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    top: 36%;
+    left: 50%;
+    /*posiciona o modal ao centro da página*/
+    transform: translate(-50%, -50%);
+
+    /*sobrepões o modal na página*/
+    z-index: 2;
+
+}
+
+
+#modalCarrinhoHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+
+
+
+#fecharModalCarrinho {
+    padding: 10px 20px;
+    background: #888;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#fecharModalCarrinho:hover {
+    opacity: 1;
+}
+
+.tabelaCarrinho {
+    width: 100%;
+    /*para as colunas da tabela não terem espaço entre si*/
+    border-collapse: collapse;
+
+}
+
+.tabelaCarrinho thead {
+    border-bottom: 1px solid #959595;
+
+}
+
+.tabelaHeadCarrinho {
+    font-size: 16px;
+    text-align: start;
+    padding-bottom: 6px;
+}
+
+.segundaColuna,
+.terceiraColuna {
+    width: 25%;
+
+}
+
+
+.produtoCarrinho {
+    border-bottom: 1px solid #DDD;
+}
+
+.produtoCarrinho td {
+    padding: 8px 0;
+}
+
+.identificacaoProduto {
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloProdutoCarrinho {
+
+    font-size: 18px;
+
+}
+
+.identificacaoProduto img {
+    width: 100px;
+    height: 100px;
+    /*para limitar as medidas de uma foto ao tamanho definido sem provocar mudanças como esticamento da imagem*/
+    object-fit: cover;
+
+}
+
+.precoProdutoCarrinho {
+    font-size: 16px;
+    text-align: start;
+}
+
+.inputQtdProdutos {
+    width: 48px;
+    height: 34px;
+    border-radius: 6px;
+    border: 2px solid #56c5db;
+    text-align: center;
+    background-color: #EEE;
+    align-self: center;
+}
+
+.btnRemoverProduto {
+    margin-left: 24px;
+    background: #EEE;
+    border: none;
+    padding: 7px;
+    border-radius: 100%;
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.btnRemoverProduto:hover {
+    background: #DDD;
+}
+
+.iconeRemoverProduto {
+    display: flex !important;
+    font-size: 15px !important;
+
+}
+
+
+
+#containerTotalCarrinho {
+    border-top: 1px solid #959595;
+    text-align: end;
+    padding: 6px 40px 0 0;
+    font-size: 18px;
+}
+
+#containerTotalCarrinho strong {
+    margin-right: 12px;
+}
+
+#containerBtnFinalizar {
+    display: flex;
+}
+
+
+#btnFinalizarCompra {
+    margin: 20px auto;
+    background: #ffe600;
+    color: #000;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: none;
+    opacity: 0.8;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#btnFinalizarCompra:hover {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+
+    /*algumas mudanças necessárias para o modal se adaptar à largura de tela de dispositivos como tablets e smartphones*/
+    #modalCarrinhoHeader h2 {
+        font-size: 16px;
+    }
+
+    .tabelaHeadCarrinho {
+        font-size: 12px;
+
+    }
+
+    .identificacaoProduto img {
+        width: 60px;
+        height: 60px;
+
+    }
+
+    .tituloProdutoCarrinho {
+
+        font-size: 14px;
+
+    }
+
+    .inputQtdProdutos {
+        width: 25.5px;
+        height: 25.5px;
+
+    }
+
+    .btnRemoverProduto {
+        margin-left: 6px;
+
+    }
+
+
+    #containerTotalCarrinho {
+
+        padding: 6px 30px 0 0;
+        font-size: 14px;
+    }
+
+    #containerTotalCarrinho strong {
+        margin-right: 5px;
+    }
+
+    .precoProdutoCarrinho {
+        font-size: 13px;
+    }
+
+    #btnFinalizarCompra {
+        font-size: 12px;
+
+    }
+
+}
+
+
+
+
+/* Modal Login */
+.login {
+    color: #fff;
+}
+
+dialog {
+    /*CAIXA DE DIALOGO (MODAL)*/
+    padding: 20px 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+}
+
+#modal-login {
+    background-color: #c7982a;
+    background-image: url("/img/header/background.jpg");
+    background-size: cover;
+}
+
+.elementos {
+    margin: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.ancoras {
+    margin: 10px;
+    display: flex;
+}
+
+.ancora {
+    font-size: 17px;
+    color: #fff;
+}
+
+.botoes {
+    margin: 20px;
+    display: block;
+}
+
+#abrirModal,
+#abrirModalCarrinho
+
+/*BOTÃO DE ABRIR (ICONE)*/
+    {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.btnModal {
+    margin-left: 50px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    background-color: #FFC337;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    filter: drop-shadow(0px 0px 10px #35332b);
+
+    transition: 0.2s;
+    /*ANIMAÇÃO DE CORES AO REDOR DA VIDA*/
+}
+
+.btnModal:hover {
+    background-color: #c7982a;
+    transform: scale(1.05);
+    opacity: 1;
+    filter: drop-shadow(0px 0px 10px #8a7f53);
+}
+
+/* TABLE */
+
+.caixaTexto {
+    /*TEXTO ANTES DA CAIXA*/
+    font-size: 20px;
+    color: #fff;
+}
+
+.caixa {
+    /*BOX QUE VAI RECEBER ALGO*/
+    padding: 5px;
+    margin: 30px;
+    border-radius: 10px;
+
+}
+
+.cadast {
+    margin-bottom: 15px;
+    /* color:#FFC */
+}
+
+.cad {
+    margin-top: 10px;
+    /* display: flex; */
+    color: #FFC337;
+}
+
+#abrirModal {
+    margin-top: 10px;
+}

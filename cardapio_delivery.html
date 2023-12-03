@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Cardápio | Delivery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/css/cardapio_delivery.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/modal.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="/src/js/cardapio_delivery.js" defer></script>
+    <!-- <script src="/src/js/carrinho.js" defer></script> -->
+    <script src="/src/js/modal.js" defer></script>
+</head>
+
+<body id="corpoCardapioDelivery">
+
+    <header>
+
+        <div class="header">
+            <img src="/img/footer/logo_footer/logo_footer.jpeg" alt="">
+
+            <div class="header-right">
+
+                <a href="home.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="cardapio_demonstrativo.html">Cardápio</a>
+                <a href="cadastro.html">Cadastro</a>
+
+                <!-- MODAL CARRINHO -->
+                <!-- Botão para abrir o modal -->
+                <button id="abrirModalCarrinho"><img src="/img/header/header_icones/shopping-cart-svgrepo-com (1).svg"
+                        alt=""></button>
+                <!-- Tag dialog para criar um modal para o carrinho de compras -->
+                <dialog id="modalCarrinho">
+                    <div id="modalCarrinhoHeader">
+                        <h2>Seu Carrrinho</h2>
+                        <!-- Botão para fechar modal -->
+                        <button id="fecharModalCarrinho">Fechar</button>
+                    </div>
+                    <!-- Para a exibição do carrinho é criada uma tabela -->
+                    <table class="tabelaCarrinho">
+                        <!-- No head da tabela ficam os nomes de cada coluna -->
+                        <thead>
+                            <tr>
+                                <th class="tabelaHeadCarrinho primeiraColuna">Item</th>
+                                <th class="tabelaHeadCarrinho segundaColuna">Preço</th>
+                                <th class="tabelaHeadCarrinho terceiraColuna">Quantidade</th>
+                            </tr>
+                        </thead>
+                        <!-- No corpo da tabela ficam os elementos do carrinho separados por colunas: 1ª: imageme e título; 2ª: preço; 3ª input para quantidade e botão para remover item -->
+                        <tbody>
+                            <!-- As linhas que serão exibidas são inseridas por JavaScript, logo essas abaixo não serão exibidas -->
+                            <!-- <tr class="produtoCarrinho">
+                                <td class="identificacaoProduto">
+                                    <h3 class="tituloProdutoCarrinho"></h3>
+                                    <img src="" class="imgProdutoCarrinho" alt="">
+                                </td>
+                                <td class="precoProdutoCarrinho">R$23,99</td>
+                                <td><input type="number" min="0" value="1" class="inputQtdProdutos">
+                                    <button class="btnRemoverProduto"><span class="material-symbols-outlined iconeRemoverProduto">
+                                            close
+                                        </span></button>
+                                </td>
+                            </tr>
+                            <tr class="produtoCarrinho">
+                                <td class="identificacaoProduto">
+                                    <h3 class="tituloProdutoCarrinho"></h3>
+                                    <img src="" class="imgProdutoCarrinho" alt="">
+                                </td>
+                                <td class="precoProdutoCarrinho">R$23,99</td>
+                                <td><input type="number" min="0" value="5" class="inputQtdProdutos">
+                                    <button class="btnRemoverProduto"><span class="material-symbols-outlined iconeRemoverProduto">
+                                            close
+                                        </span></button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                        <!-- No footer exibimos o valor total da compra -->
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" id="containerTotalCarrinho">
+
+                                    <strong>Total </strong> <span class="precoTotal"> R$0,99</span>
+
+                                </td>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <!-- Botão para finalizar a compra -->
+                    <span id="containerBtnFinalizar">
+
+                        <button type="button" class="btnFinalizar" id="btnFinalizarCompra">Finalizar
+                            Compra</button>
+                    </span>
+                </dialog>
+
+                <!-- MODAL LOGIN -->
+                <button id="abrirModal"><img
+                        src="/img/header/header_icones/profile-user-avatar-man-person-svgrepo-com.svg" alt=""></button>
+
+                <dialog id="modal-login">
+                    <div class="elementos">
+                        <h2 class="login">LOGIN</h2>
+                        <table>
+                            <tr>
+                                <td class="caixaTexto">E-MAIL:</td>
+                                <td> <input type="text" size="30" class="caixa"> </td>
+                            </tr>
+                            <tr>
+                                <td class="caixaTexto">SENHA:</td>
+                                <td> <input type="text" size="30" class="caixa"> </td>
+                            </tr>
+                        </table>
+
+                        <div class="botoes">
+                            <button class="btnModal">Enviar</button>
+                            <button class="btnModal" id="fecharModal">Fechar</button>
+                        </div>
+
+                        <div class="ancoras">
+                            <a class="ancora c" href="#">Esqueceu sua Senha? </a>
+                            <p class="cad ancora c">Não possui conta? </p> <a class="ancora cadast"
+                                href="#">Cadastre-se</a>
+                        </div>
+
+                    </div>
+
+                </dialog>
+
+
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- Primeira seção que contém os botões para paginação do cardápio de comidas e bebidas para delivery e campo de pesquisa -->
+        <section class="containerMenuBtn">
+            <!-- Dois botões feitos com a tag a (âncora) -->
+            <div class="menuBtn">
+                <a id="btnComidas" class="botaoMenu selecionado">Comidas</a>
+                <a id="btnBebidas" class="botaoMenu">Bebidas</a>
+                <a id="btnBebidas" class="botaoMenu">Sobremesas</a>
+            </div>
+            <!-- Campo de pesquisa com a tag input -->
+            <div id="divSearch">
+                <label id="labelPesquisar" for="pesquisarPratos">Nossas opções</label>
+                <input type="text" id="pesquisarPratos" placeholder="Buscar">
+            </div>
+        </section>
+
+
+        <!-- Seção cardápio de comidas construída com lista não ordenada de cards   -->
+        <section class="menu ativa">
+            <ul class="containerComida">
+                <!-- Cada card contém o título, seguido por imagem, texto descritivo e botão com o preço do prato  -->
+                <li class="containerCard">
+                    <img class="imgCard" src="img/cardapio_demonstrativo/pratos/almondegas.jpg" alt="almondegas">
+                    <h2 class="tituloCard">Espaguete com Almôndegas</h2>
+                    <p class="paragrafoCard"> Espaguete Macarrão com almôndegas e molho de tomate.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$23,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="img/cardapio_demonstrativo/pratos/bife assado.jpg" alt="Bife assado">
+                    <h2 class="tituloCard">Bife assado</h2>
+                    <p class="paragrafoCard">Bife assado no osso com especiarias e vegetais</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$25,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/pratos/bolodecarne.jpg" alt="Bolo de Carne">
+                    <h2 class="tituloCard">Bolo de Carne</h2>
+                    <p class="paragrafoCard">Purê úmido com bolo de carne com espinafre e vagem</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span>
+                        <p class="precoProdutoBtn">R$15,99</p>
+                    </button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/pratos/empadaovegano.jpg"
+                        alt="Empadão Vegano">
+                    <h2 class="tituloCard">Empadão Vegano</h2>
+                    <p class="paragrafoCard">Empadão vegano feito de pasta de lentilha com cogumelos e batata doce e
+                        iguarias.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$19,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/pratos/hamburgue.jpg" alt="Hamburguer">
+                    <h2 class="tituloCard">Hambúrguer de Carne</h2>
+                    <p class="paragrafoCard">Hamburguer com carne, alface, bacon, queijo, tomate, molho da casa e isca
+                        de frango.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$44,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/pratos/pastapenne.jpg" alt="Pasta Penne">
+                    <h2 class="tituloCard">Pasta Penne</h2>
+                    <p class="paragrafoCard">Pasta penne com tomate assado, molho, queijo mussarela.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$19,99</span></button>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Seção cardápio de bebidas construída com lista não ordenada de cards   -->
+        <section class="menu">
+            <ul class="containerComida oculto">
+                <!-- Cada card contém o título, seguido por imagem, texto descritivo e botão com o preço do prato  -->
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/bebidasemalcool/sucos.jpg" alt="">
+                    <h2 class="tituloCard">Sucos Naturais</h2>
+                    <p class="paragrafoCard">Sucos naturais, feitos com a fruta.
+                    </p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$15,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/bebidasemalcool/smoothie vermelho.jpg" alt="">
+                    <h2 class="tituloCard">Smoothie de Frutas Vermelhas</h2>
+                    <p class="paragrafoCard">Deliciosa vitamina feita de um mix de frutas vermelhas.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$17,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/bebidasemalcool/limonadarosalavandalimao.jpg"
+                        alt="">
+                    <h2 class="tituloCard">Limonada Rosa</h2>
+                    <p class="paragrafoCard">Deliciosa Limonada Rosa feita com Limão Siciliano e lavanda, adocicada
+                        com
+                        açucar ou adoçante.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$19,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/bebidasemalcool/limonadalaranjacereja.jpg"
+                        alt="Limonada Laranja e Cereja">
+                    <h2 class="tituloCard">Limonada de Laranja Com Cereja</h2>
+                    <p class="paragrafoCard">Deliciosa Limonada de Laranja com Cereja feita na hora, adocicada com
+                        açucar ou adoçante.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$14,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/bebidasemalcool/cocacola.jpg" alt="">
+                    <h2 class="tituloCard">Refrigerantes em lata e garrafa de 2L</h2>
+                    <p class="paragrafoCard">refrigerantes Diversos</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$29,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/bebidasemalcool/chágelados.jpg" alt="">
+                    <h2 class="tituloCard">Chá gelado</h2>
+                    <p class="paragrafoCard">Chá gelado ou Chá frio, servido gelado ou bem gelado com cubos de
+                        gelo.
+                    </p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$26,99</span></button>
+
+                </li>
+            </ul>
+        </section>
+
+        <!-- Seção cardápio de sobremesas construída com lista não ordenada de cards   -->
+        <section class="menu">
+            <ul class="containerComida oculto">
+                <!-- Cada card contém o título, seguido por imagem, texto descritivo e botão com o preço do prato  -->
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/sobremesas/bolochocolate.jpg" alt="">
+                    <h2 class="tituloCard">Bolo de Chocolate</h2>
+                    <p class="paragrafoCard">Delicioso Bolo de chocolate feito com massa nobre e cacau 100%.
+                    </p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$18,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/sobremesas/torta limão.jpg" alt="">
+                    <h2 class="tituloCard">Torta de Limão</h2>
+                    <p class="paragrafoCard">Deliciosa Torta de Limão com biscoito, Chantily e um pedaço nobre de limão
+                        com raspas.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$16,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/sobremesas/bolofrutas.jpg" alt="">
+                    <h2 class="tituloCard">Bolo de Baunilha com Frutas</h2>
+                    <p class="paragrafoCard">Delicioso bolo de Baunilha feito com Frutas vermelhas.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$15,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/sobremesas/pettitgatteou.jpg"
+                        alt="Limonada Laranja e Cereja">
+                    <h2 class="tituloCard">Petit Gâteau</h2>
+                    <p class="paragrafoCard">Delicioso Bolo de chocolate com casca e recheio cremoso acompanhado de
+                        frutas ou sorvete..</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$14,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/sobremesas/pudim.jpg" alt="">
+                    <h2 class="tituloCard">Pudim</h2>
+                    <p class="paragrafoCard">Delicioso Pudim com calda e hortelã.</p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$16,99</span></button>
+                </li>
+
+                <li class="containerCard">
+                    <img class="imgCard" src="/img/cardapio_demonstrativo/sobremesas/redvelvet.jpg" alt="">
+                    <h2 class="tituloCard">Red Velvet</h2>
+                    <p class="paragrafoCard">Bolo com textura muito leve e macia, levemente amanteigado, com recheio de
+                        chantininho.
+                    </p>
+                    <button class="btnCard"><span class="material-symbols-outlined iconeAdicionarProduto">
+                            add_circle
+                        </span> <span class="addProdutoBtn">Adicionar | </span><span
+                            class="precoProdutoBtn">R$17,99</span></button>
+
+                </li>
+            </ul>
+        </section>
+
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>

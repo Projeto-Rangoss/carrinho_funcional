@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Rangoss</title>
+  <link rel="stylesheet" href="src/css/home.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <script src="/src/js/cardapio_delivery.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="header">
+      <img src="/img/footer/logo_footer/logo_footer.jpeg" alt="">
+
+      <div class="header-right">
+
+        <a href="home.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="cardapio_demonstrativo.html">Cardápio</a>
+        <a href="cadastro.html">Cadastro</a>
+
+        <a href="carrinho.html"><img src="/img/header/header_icones/shopping-cart-svgrepo-com (1).svg" alt=""></a>
+
+        <button id="abrirModal"><img src="/img/header/header_icones/profile-user-avatar-man-person-svgrepo-com.svg"
+            alt=""></button>
+
+        <dialog>
+          <div class="elementos">
+            <h2 class="login">LOGIN</h2>
+            <table>
+              <tr>
+                <td class="caixaTexto">E-MAIL:</td>
+                <td> <input type="text" size="30" class="caixa"> </td>
+              </tr>
+              <tr>
+                <td class="caixaTexto">SENHA:</td>
+                <td> <input type="text" size="30" class="caixa"> </td>
+              </tr>
+            </table>
+
+            <div class="botoes">
+              <button class="btnModal">Enviar</button>
+              <button class="btnModal" id="fecharModal">Fechar</button>
+            </div>
+
+            <div class="ancoras">
+              <a class="ancora c" href="#">Esqueceu sua Senha? </a>
+              <p class="cad ancora c">Não possui conta? </p> <a class="ancora cadast" href="#">Cadastre-se</a>
+            </div>
+
+          </div>
+
+        </dialog>
+
+
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <main class="main">
+
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicadores/pontos -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+
+      </div>
+
+      <!-- A apresentação de slides/carrossel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/home/home_carrossel/m_img-carrocel-01-1.jpeg" alt="Imagem Carrosel 1" class="d-block"
+            style="width:100%">
+          <div class="carousel-caption">
+            <!-- <button type="button" id="btn_carrossel1" class="btn btn-outline-light">Venha nos conhecer</button> Este botão do bootstrap foi adicionado para encaminhar o usuário para outra página -->
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/home/home_carrossel/m_img-carrocel-02-2.jpeg" alt="Imagem Carrossel 2" class="d-block"
+            style="width:100%">
+          <div class="carousel-caption">
+            <p>Experimente o nosso</p>
+            <h3>Hamburger</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/home/home_carrossel/m_img-carrocel-03-3.jpeg" alt="Imagem Carrossel 3" class="d-block"
+            style="width:100%">
+          <div class="carousel-caption">
+            <p>Jogue enquanto</p>
+            <h3>Come!</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/home/home_carrossel/m_img-carrocel-04-4.jpeg" alt="Imagem Carrossel 4" class="d-block"
+            style="width:100%">
+          <div class="carousel-caption">
+            <p>Coma a nossa</p>
+            <h3>Pizza</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles/ícones esquerdo e direito -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <div class="img_background_apresentacao1"> <!-- Aqui entrará a imagem de background que englobará a seção -->
+
+      <!-- Primeira seção da home -->
+      <section class="secao_apresentacao">
+        <div class="container_txt_apresentacao">
+          <h2 class="titulo_apresentacao">
+            Conheça nossos pratos!
+            <div class="linha"></div>
+          </h2>
+
+
+          <h2><strong>Total</strong> <span class="preco_total"></span></h2>
+
+
+          <p class="paragrafo_apresentacao">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+            roots in a piece of classical Latin literature from 45 BC.
+          </p>
+          <a href="./cardapio_demonstrativo.html" id="btn_apresentacao1" class="btn btn-warning">Menu</a>
+        </div>
+        <div class="container_img_apresentacao">
+          <img class="img_apresentacao" id="img_apresentacao_1"
+            src="img/home/home_apresentacao/m_img-apresentaçao-01.jpg">
+          <img class="img_apresentacao" src="img/home/home_apresentacao/m_img-apresentaçao-02.jpg">
+        </div>
+        <div class="container_btn_apresentacao">
+          <a href="./cardapio_demonstrativo.html" id="btn_apresentacao_responsivo1" class="btn btn-warning">Menu</a>
+          <!-- Este botão aparecerá somente quando houver a renderização do tamnho da página web para dispositivos móveis -->
+        </div>
+      </section>
+    </div>
+
+    <div class="img_background_apresentacao2"> <!-- Aqui entrará a imagem de background que englobará a seção -->
+
+      <!-- Segunda seção da home -->
+      <section class="secao_apresentacao2">
+        <div class="txt_apresentacao2">
+          <p class="paragrafo_apresentacao2">Carregue a sua Stamina!</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Terceira seção da home. Neste caso, usamos a alternativa de utilizar a imagem de background da seção no CSS -->
+    <!-- A terceira seção aproveita os mesmos elemento da primeira seção -->
+    <section class="secao_apresentacao3">
+      <div class="container_img_apresentacao">
+        <img class="img_apresentacao" src="img/home/home_apresentacao/m_img-apresentaçao-03.jpg">
+        <img class="img_apresentacao" src="img/home/home_apresentacao/m_img-apresentaçao-04.jpg">
+      </div>
+      <div class="container_txt_apresentacao">
+        <h2 class="titulo_apresentacao">
+          Diversão pra você e toda a sua família
+          <div class="linha"></div>
+        </h2>
+        <p class="paragrafo_apresentacao">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+          roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+          McClintock, a Latin professor at Hampden-Sydney College in Virginia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção do delivery -->
+    <div class="background_delivery"> <!-- Aqui entrará a imagem de background que englobará a seção -->
+      <section class="secao_delivery">
+        <div class="container_img_delivery">
+          <img class="img_delivery" src="/img/home/home_delivery/img_delivery.jpg" alt="">
+        </div>
+        <div class="container_txt_delivery">
+          <h2 class="titulo_delivery">Nós também temos Delivery! <div class="linha2"></div>
+          </h2>
+          <img id="img_delivery_responsivo" class="img_delivery" src="/img/home/home_delivery/img_delivery.jpg" alt="">
+          <p class="paragrafo_delivery">Amandinha linda do nosso coração, sempre será lembrada como a garota mais
+            carismática da turma</p>
+          <a type="button" href="/cardapio_delivery.html" id="btn_delivery" class="btn btn-outline-danger">Peça Já!</a>
+        </div>
+        <div class="container_btn_delivery">
+          <a type="button" href="/cardapio_delivery.html" id="btn_delivery_responsivo"
+            class="btn btn-outline-danger">Peça Já</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Seção de parcerias -->
+    <section class="secao_parcerias">
+      <h2 class="titulo_parcerias">PARCERIAS</h2>
+      <div class="container_parceiros">
+        <img class="logo_parcerias" src="/img/home/home_parcerias/logo-parcerias1.png" alt="logo do alan">
+        <img class="logo_parcerias" src="/img/home/home_parcerias/logo-parcerias2.png" alt="logo da amanda">
+        <img class="logo_parcerias" src="/img/home/home_parcerias/logo-parcerias3.png" alt="logo do caio">
+        <img class="logo_parcerias" src="/img/home/home_parcerias/logo-parcerias4.png" alt="logo do jp">
+        <img class="logo_parcerias" src="/img/home/home_parcerias/logo-parcerias5.png" alt="logo do nathan">
+        <img class="logo_parcerias" src="/img/home/home_parcerias/logo-parcerias6.png" alt="logo do vt">
+      </div>
+    </section>
+
+
+    <div id="carrinhoIcone">
+      <a href="/cardapio_delivery.html" id="carrinhoLink"><img
+          src="/img/header/header_icones/shopping-cart-svgrepo-com (1).svg" alt=""></a>
+    </div>
+
+
+    <footer>
+      <div class="desk">
+        <div class="contato">
+
+          <h1>Contatos</h1>
+
+          <p>WhatsApp: <img class="deskicon" src="/img/footer/logo_footer/Whats.png" alt=""></p>
+          <p>(21)988692752</p>
+
+          <p>Telefone:</p>
+          <p>(21) 2817-0470</p>
+
+          <p>E-mail:</p>
+          <p>rangossrestaurant@gmail.com</p>
+
+          <h2>Endereço</h2>
+
+          <p>Rua Santa Luzia, 240 - Cinelândia <br> 21959-076 - Rio de Janeiro - RJ</p>
+
+        </div>
+
+        <div class="redes">
+
+          <h1>Redes Sociais</h1>
+
+          <p>Instagram: <img class="deskicon" src="/img/footer/logo_footer/Insta.png" alt=""></p>
+          <p>@rangossrestaurant</p>
+
+          <p>Facebook: <img class="deskicon" src="/img/footer/logo_footer/Face.png" alt=""></p>
+          <p>Rangoss Restaurant</p>
+
+          <a href="#"><img class="logodesk" src="/img/footer/logo_footer/Logo_desk.png" alt=""></a>
+
+        </div>
+
+        <div class="perguntas">
+
+          <h1>Perguntas frequentes</h1>
+
+          <p><a href="">Até onde entregamos?</a></p>
+          <p><a href="">Qual é o nosso cardápio?</a></p>
+          <p><a href="">Quais as formas de pagamento?</a></p>
+
+        </div>
+      </div>
+
+      <div class="mobi">
+
+        <div class="icon"><a href="#"><img src="/img/footer/logo_footer/Whats.png" alt=""></a> <br> <a href="#"><img
+              src="/img/footer/logo_footer/Face.png" alt=""></a> <br> <a href="#"><img
+              src="/img/footer/logo_footer/Insta.png" alt=""></a></div>
+        <div class="logo"><a href="#"><img src="/img/footer/logo_footer/Logo_desk.png" alt=""></a></div>
+
+      </div>
+
+    </footer>
+
+    <!--script do header-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/js/header.js"></script>
+    <script src="/src/js/modal.js"></script>
+</body>
+
+</html>
